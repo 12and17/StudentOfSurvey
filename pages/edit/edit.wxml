@@ -1,0 +1,91 @@
+<!--main.wxml-->
+<image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/bg2.png" mode="aspectFill" class="bgImg" style="{{translate}}"></image>
+<!-- 侧滑栏 -->
+
+
+<page bindtouchend='touchend' bindtouchstart='touchstart'>
+  <!-- 侧滑栏 -->
+  <view class="page_tab" style='z-index:{{zindex}}'>
+    <block>
+      <!-- <navigator url='../login/login'> -->
+      <image class='user_head' src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/1.jpg'></image>
+      <!-- <view class='user_name'>未登录</view> -->
+      <!-- </navigator> -->
+    </block>
+    <!-- <block wx:else>
+      <image class='user_head' src='{{user_head}}'></image>
+      <view class='user_name'>{{user_name}}</view>
+    </block> -->
+    <view class="page_tab_content">
+      <navigator url='../zhihu/zhihu' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/home.jpg'></image>
+          <text>首页</text>
+        </view>
+      </navigator>
+      <navigator url='../myself/myself' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/self.jpg'></image>
+          <text>个人中心</text>
+        </view>
+      </navigator>
+      <navigator url='../submission/submission' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/submit.jpg'></image>
+          <text>提交问题</text>
+        </view>
+      </navigator>
+      <navigator url='../untreatProblem/untreatProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/cha.jpg'></image>
+          <text bindtap='tosat'>未处理问题</text>
+        </view>
+      </navigator>
+      <navigator url='../alreadyProcess/alreadyProcess' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/gou.jpg'></image>
+          <text>已处理问题</text>
+        </view>
+      </navigator>
+      <navigator url='../rejectProblem/rejectProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/reject.jpg'></image>
+          <text bindtap='tosat'>被驳回问题</text>
+        </view>
+      </navigator>
+      <navigator url='../contactUs/contactUs' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/contect.jpg'></image>
+          <text>联系我们</text>
+        </view>
+      </navigator>
+      <navigator url='../index/index' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/exit.jpg'></image>
+          <text>离开</text>
+        </view>
+      </navigator>
+      <!-- <button wx:if="{{btn_val != '登录'}}" catchtap='register'>{{btn_val}}</button>
+      <button wx:else catchtap='register'>{{btn_val}}</button> -->
+    </view>
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+
+  <!-- 主页 -->
+  <view class="container" style="{{translate}}">
+    <view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+    <text class='hint_text2'>类型：{{problem_type}}</text>
+    <text class='hint_text'>{{hint_text}}</text>
+    <view class="conts">
+      <textarea class="areas" placeholder="请输入你的问题" maxlength="{{max}}" value='{{edit_text}}' bindinput="inputs">
+        <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+        <text class="hint">{{texts}}</text>
+      </textarea>
+    </view>
+
+    <button class="login_button" bindtap="loginAction">提交</button>
+  </view>
+</page>
+<!-- <loading hidden="{{loadingHidden}}" bindchange="loadingChange">
+  加载中...
+</loading> -->

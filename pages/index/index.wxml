@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/bg2.png" mode="aspectFill" class="bgImg"></image>
+<view class="container">
+<view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view> 
+  <image src="{{bgimg}}" mode="aspectFit" class="logo"></image>
+
+  <view class="section" >  
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{selectData}}" mode = "selector">  
+    <view class="picker">  
+      {{selectData[index]}}  
+    </view>  
+  </picker>  
+</view>
+   <view class="whiteLine"></view> 
+  <block>
+    <input type="text" bindinput="bindNumInput" bindblur="numChange" placeholder="账号" placeholder-class="ph" value='{{inputValue}}' />
+    <input type="text" bindinput="bindPsdInput" bindblur="psdChange" placeholder="密码" placeholder-class="ph" password="true" value='{{inputValue}}' />
+  </block>
+
+  <button class="loginBtn" bindtap="loginSubmit" plain="true" hover-class="btnHover">登录</button>
+
+  <a bindtap="RandP" class="info">忘记密码?</a>
+
+  <view class="footer"> © 2018 XinYiStudio</view>
+
+</view>
+
+<modal title="提示" hidden="{{modalHidden}}" no-cancel bindconfirm="modalChange">
+  <view class="newAlert"> {{modelInnerHtml}} </view>
+</modal>
+
+<loading hidden="{{loadingHidden}}" bindchange="loadingChange">
+  加载中...
+</loading>

@@ -1,0 +1,98 @@
+<!--main.wxml-->
+<image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/bg2.png" mode="aspectFill" class="bgImg" style="{{translate}}"></image>
+<!-- 侧滑栏 -->
+
+
+<page bindtouchend='touchend' bindtouchstart='touchstart'>
+     <!-- 侧滑栏 -->
+  <view class="page_tab" style='z-index:{{zindex}}'>
+    <block>
+      <image class='user_head' src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/4.jpg'></image>
+    </block>
+    <view class="page_tab_content">
+      <navigator url='../homepage/homepage' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/home.jpg'></image>
+          <text>首页</text>
+        </view>
+      </navigator>
+      <navigator url='../myself/myself' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/self.jpg'></image>
+          <text>个人中心</text>
+        </view>
+      </navigator>
+      <navigator url='../unagreeProblem/unagreeProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/submit.jpg'></image>
+          <text>未同意问题</text>
+        </view>
+      </navigator>
+      <navigator url='../addAndDelete/addAndDelete' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/addAndDelete.jpg'></image>
+          <text>添加&删除处理教师</text>
+        </view>
+      </navigator>
+      <navigator url='../replaceCharge/replaceCharge' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/replace.jpg'></image>
+          <text>更换管理员</text>
+        </view>
+      </navigator>
+      <navigator url='../contactUs/contactUs' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/contect.jpg'></image>
+          <text>联系我们</text>
+        </view>
+      </navigator>
+      <navigator url='../../index/index' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/exit.jpg'></image>
+          <text>离开</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+
+  <!-- 主页 -->
+  <view class="container" style="{{translate}}">
+    <view class="allbutton">
+      <view class="left">
+      <view class='reddot' wx:if='{{is_show1}}'>{{teach_num}}</view>
+        <button class="login_button" bindtap='getAction' id='richangjiaoxue'>
+          <image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/teaching.jpg" mode="aspectFill" class="img">
+          </image>
+          <text class="tip1">日常教学问题</text>
+        </button>
+      </view>
+      <view class="right">
+      <view class='reddot' wx:if='{{is_show2}}'>{{equipment_num}}</view>
+        <button class="login_button" bindtap='getAction' id='shebei'>
+          <image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/equipment.jpg" mode="aspectFill" class="img">
+          </image>
+          <text class="tip">设备问题</text>
+        </button>
+      </view>
+    </view>
+
+    <view class="allbutton">
+      <view class="left">
+      <view class='reddot' wx:if='{{is_show3}}'>{{demand_num}}</view>
+        <button class="login_button" bindtap='getAction' id='xuqiu'>
+          <image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/proposal.jpg" mode="aspectFill" class="img">
+          </image>
+          <text class="tip1">需求与建议</text>
+        </button>
+      </view>
+      <view class="right">
+        <button class="login_button" bindtap='modifityAction'>
+          <image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/except.jpg" mode="aspectFill" class="img">
+          </image>
+          <text class="tip">敬请期待</text>
+        </button>
+      </view>
+    </view>
+  </view>
+</page>

@@ -1,0 +1,300 @@
+/**index.wxss**/
+page{
+  height: 100%
+}
+.container {
+  position: absolute;
+  opacity: 0.75;
+  background: -webkit-linear-gradient(top, #303 0%, #ccc 100%);
+  /*background: -o-linear-gradient(top, #330033 0%,#CCCCCC 100%);
+  background: -ms-linear-gradient(top, #330033 0%,#CCCCCC 100%);
+   background: linear-gradient(to bottom, #330033 0%,#99CCFF 100%); */
+  font-family: 微软雅黑 !important;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: All 0.4s ease;  
+  -webkit-transition: All 0.4s ease;
+}
+
+
+.mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 9000;
+    opacity: 0.7;
+}
+.modalDlg{
+    width: 580rpx;
+    height: 620rpx;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 9999;
+    margin: -370rpx 85rpx;
+    background-color: #fff;
+    border-radius: 36rpx;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+.text_process{
+  margin-top: 20rpx;
+  /* margin-left: 20rpx; */
+  display: flex;
+  font-size: 30rpx;
+  border-bottom: black;
+  border-bottom-width: 2rpx
+}
+.text_left{
+  float: left;
+   margin-left: 50rpx 
+}
+.text_right{
+  float: right;
+   margin-left: 250rpx 
+}
+.text_button{
+  margin-top: 250rpx;
+  background-color: greenyellow
+}
+.text_img{
+  width: 40rpx;
+  height: 40rpx
+}
+
+.bgImg {
+  z-index: 1;  
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+    transition: All 0.4s ease;  
+  -webkit-transition: All 0.4s ease;
+}
+.sumit_time{
+  font-size: 20rpx;
+  padding-top: 30rpx;
+}
+.className {
+  /* text-align: left *//* text-align: left; */
+  flex-direction: row;
+  padding-top: 30rpx;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+  text-decoration-line: underline;
+}
+.problem{
+  padding-top: 60rpx;
+  color: red
+}
+.process{
+  width: 100%
+}
+/* .zhihuUl {
+  height: 100%;
+}
+
+.zhihuLi {
+  position: relative;
+  border-radius: 20rpx;
+  width: 700rpx;
+  height: 200rpx;
+  background-color: #fff;
+  margin: 20rpx auto 20rpx 25rpx;
+  text-align: left;
+}
+
+.innerImg {
+  margin: 10rpx 10rpx auto 10rpx;
+  height: 180rpx;
+  width: 180rpx;
+  border-radius: 20rpx;
+}
+
+.innerTitle {
+  position: absolute;
+  top: 0;
+  margin: 15rpx;
+  width: 470rpx;
+  font-size: 32rpx;
+  line-height: 1.5;
+}
+
+.innerRM {
+  position: relative;
+  top: -20rpx;
+  padding: 15rpx;
+  font-size: 20rpx;
+  color: #333;
+  text-decoration: underline;
+} */
+
+.logo {
+  width: 300rpx;
+  height: 300rpx;
+}
+
+
+.tr1{
+   display: flex;  
+  width: 100%;  
+  justify-content: center;  
+  height: 2rem;  
+  align-items: center;
+}
+.bg-g{  
+  background: #E6F3F9;  
+}
+.show_button {
+  height: 50rpx;
+  font-size: 20rpx;
+  background-color: green;
+  width: 100rpx;
+  margin-left: 100rpx
+}
+.td-1 {  
+    width:8%;  
+    justify-content: center;  
+    display: flex;  
+    text-align: center;  
+    border-right: 2rpx solid #ddd;
+    font-size: 20rpx;  
+    height: 100%;  
+    border-bottom: 2rpx solid #ddd;
+    align-items: center;
+}
+.td-2 {  
+    width:92%;  
+    justify-content: left;  
+    border-right: 2rpx solid #ddd;  
+    text-align:left;
+    align-items: left;
+    display: flex;
+    font-size: 20rpx;
+    max-width: 100%;  
+    height: 2rem;
+    max-height: 100%;  
+    border-bottom: 2rpx solid #ddd;
+}
+.th-grade{
+  border-right: 2rpx solid #ddd;
+  width: 25%;  
+  justify-content: center;  
+  color: #000;  
+  display:flex;
+  height: 3rem;  
+  font-size: 30rpx; 
+  align-items: center;  
+  max-height:  2rem;  
+  max-width: 100%;
+  border-bottom: 2rpx solid #ddd;
+  text-align: center;
+}
+
+
+
+/* 未分配，已处理问题 */
+
+.all_show {
+  margin-top: 30rpx;
+  width: 600rpx;
+  display: flex;
+  height: 6%;
+  flex-direction: row;
+  background-color: white;
+}
+
+.show1 {
+    /* padding-left: 6%;  */
+  margin-top: 3%;
+  font-size: 25rpx; 
+  width: 200rpx;
+  /* background-color: gold; */
+}
+
+.show2 {
+   margin-top: 2.5%;
+    /* margin-left: 100rpx;  */
+   text-align: center;    
+  /* background-color: gold; */
+  font-size: 30rpx;
+  color: red; 
+  width: 200rpx
+}
+
+.show3 {
+  /* background-color: gold; */
+    margin-top: 2%; 
+    /* margin-left: 22%;    */
+  width: 200rpx
+}
+/* 遮罩层 */  
+.bg {    
+  display: none;    
+  position: fixed;    
+  top: 0%;    
+  left: 50%;    
+  width: 100%;    
+  height: 100%;    
+  background-color: black;    
+  z-index: 1001;    
+  -moz-opacity: 0.7;    
+  opacity: 0.70;    
+  transition:width 4s;  
+  filter: alpha(opacity=70);    
+}   
+ /* 侧滑栏 */  
+.page_tab {
+  background-color: white;    
+  height: 100%;  
+  width: 750rpx;  
+  position: fixed;   
+  z-index: -1;  
+}  
+  
+.page_tab_content .wc {  
+  color: #000;  
+  position: relative;  
+  font-size: 32rpx;  
+  padding: 10rpx 0 20rpx 20rpx;  
+    /* pointer-events: none; */
+}  
+  
+.page_tab_content button {  
+  width: 280rpx;  
+  background: #fb9817;  
+  color: #fff;  
+  position: relative;  
+  right: 120rpx;  
+  top: 150rpx;  
+  height: 60rpx;  
+  line-height: 60rpx;  
+}  
+  
+.page_tab_content image {  
+  display: inline-block;  
+  height: 40rpx;  
+  width: 40rpx;  
+  margin-right: 60rpx;  
+}  
+  
+.user_head {  
+  width: 120rpx;  
+  height: 120rpx;  
+  border-radius: 50%;  
+  text-align: center;  
+   margin: 40rpx 40rpx 80rpx 150rpx;   
+}

@@ -1,0 +1,116 @@
+<!--main.wxml-->
+<image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/bg2.png" mode="aspectFill" class="bgImg" style="{{translate}}"></image>
+<!-- 侧滑栏 -->
+
+
+<page bindtouchend='touchend' bindtouchstart='touchstart'>
+
+    <!-- 侧滑栏 -->
+  <view class="page_tab" style='z-index:{{zindex}}'>
+    <block>
+      <!-- <navigator url='../login/login'> -->
+      <image class='user_head' src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/3.jpg'></image>
+      <!-- <view class='user_name'>未登录</view> -->
+      <!-- </navigator> -->
+    </block>
+    <!-- <block wx:else>
+      <image class='user_head' src='{{user_head}}'></image>
+      <view class='user_name'>{{user_name}}</view>
+    </block> -->
+    <view class="page_tab_content">
+      <navigator url='../homepage/homepage' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/home.jpg'></image>
+          <text>首页</text>
+        </view>
+      </navigator>
+      <navigator url='../myself/myself' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/self.jpg'></image>
+          <text>个人中心</text>
+        </view>
+      </navigator>
+      <navigator url='../unprocess/unprocess' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/submit.jpg'></image>
+          <text>未处理问题</text>
+        </view>
+      </navigator>
+      <navigator url='../toTeacherProblem/toTeacherProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/cha.jpg'></image>
+          <text bindtap='tosat'>被退回问题</text>
+        </view>
+      </navigator>
+      <navigator url='../unconfirmProblem/unconfirmProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/gou.jpg'></image>
+          <text>待确定问题</text>
+        </view>
+      </navigator>
+      <navigator url='../contactUs/contactUs' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/contect.jpg'></image>
+          <text>联系我们</text>
+        </view>
+      </navigator>
+      <navigator url='../../index/index' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/exit.jpg'></image>
+          <text>离开</text>
+        </view>
+      </navigator>
+      <!-- <button wx:if="{{btn_val != '登录'}}" catchtap='register'>{{btn_val}}</button>
+      <button wx:else catchtap='register'>{{btn_val}}</button> -->
+    </view>
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+
+  <!-- 主页 -->
+  <view class="container" style="{{translate}}">
+    <!-- <scroll-view scroll-y="true" scroll-x="false" class="zhihuUl" bindscrolltolower="continueLoad" bindscrolltoupper="refreshLoad">
+    <view wx:for="{{zhihuArr}}" class="zhihuLi" data-id="{{item.id}}" bindtap="turnToDetailPage">
+        <image id="{{index}}" src="{{item.images[0]}}" class="innerImg" mode="aspectFit" binderror="ifImgErr"></image>
+        <text class="innerTitle">{{item.title}}</text>
+        <text class="innerRM">点击阅读全文</text>
+    </view>
+  </scroll-view> -->
+    <image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/3.jpg" mode="aspectFit" class="logo"></image>
+    <view class='className'>
+      <view class='left'>
+        <text decode="{{true}}">姓名:</text>
+      </view>
+      <view class='right'>
+        {{process_teacher_name}}
+      </view>
+    </view>
+    <view class='className'>
+      <view class='left'>
+        处理类型:
+      </view>
+      <view class='right'>
+        {{process_teacher_type}}
+      </view>
+    </view>
+
+    <view class='problem'>
+      以下为还未处理的问题处理情况：
+    </view>
+
+    <view class='all_show'>
+      <view class='show1'>未处理问题</view>
+      <view class='show2'>{{unprocess_num}}(个)</view>
+    </view>
+    <view class='all_show'>
+      <view class='show1'>被退回问题</view>
+      <view class='show2'>{{to_teacher_num}}(个)</view>
+    </view>
+    <view class='all_show'>
+      <view class='show1'>未确认问题</view>
+      <view class='show2'>{{unconfirm_num}}(个)</view>
+    </view>
+  </view>
+</page>
+<!-- <loading hidden="{{loadingHidden}}" bindchange="loadingChange">
+  加载中...
+</loading> -->

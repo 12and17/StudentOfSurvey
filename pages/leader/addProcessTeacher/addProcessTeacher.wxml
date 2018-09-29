@@ -1,0 +1,112 @@
+<!--main.wxml-->
+<image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/bg2.png" mode="aspectFill" class="bgImg" style="{{translate}}"></image>
+<!-- 侧滑栏 -->
+
+
+<page bindtouchend='touchend' bindtouchstart='touchstart'>
+  <!-- 侧滑栏 -->
+  <view class="page_tab" style='z-index:{{zindex}}'>
+    <block>
+      <!-- <navigator url='../login/login'> -->
+      <image class='user_head' src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/4.jpg'></image>
+    </block>
+    <view class="page_tab_content">
+      <navigator url='../homepage/homepage' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/home.jpg'></image>
+          <text>首页</text>
+        </view>
+      </navigator>
+      <navigator url='../myself/myself' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/self.jpg'></image>
+          <text>个人中心</text>
+        </view>
+      </navigator>
+      <navigator url='../unagreeProblem/unagreeProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/submit.jpg'></image>
+          <text>未同意问题</text>
+        </view>
+      </navigator>
+      <navigator url='../addAndDelete/addAndDelete' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/addAndDelete.jpg'></image>
+          <text>添加&删除处理教师</text>
+        </view>
+      </navigator>
+      <navigator url='../replaceCharge/replaceCharge' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/replace.jpg'></image>
+          <text>更换管理员</text>
+        </view>
+      </navigator>
+      <navigator url='../contactUs/contactUs' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/contect.jpg'></image>
+          <text>联系我们</text>
+        </view>
+      </navigator>
+      <navigator url='../../index/index' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/exit.jpg'></image>
+          <text>离开</text>
+        </view>
+      </navigator>
+      <!-- <button wx:if="{{btn_val != '登录'}}" catchtap='register'>{{btn_val}}</button>
+      <button wx:else catchtap='register'>{{btn_val}}</button> -->
+    </view>
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+
+  <!-- 主页 -->
+  <view class="container" style="{{translate}}">
+    <view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+    <view class="body">
+      <view class='left'>请输入账号：</view>
+      <view class='right'>
+        <input class="login_text" placeholder="请输入设置的账号" bindinput="listenerAccountInput" />
+      </view>
+    </view>
+
+    <view class="body2">
+      <view class='left'>请输入密码：</view>
+      <view class='right'>
+        <input class="login_text" placeholder="请输入设置的密码" bindinput="listenerPasswordInput" />
+      </view>
+    </view>
+
+    <view class="body2">
+      <view class='left'>请输入姓名：</view>
+      <view class='right'>
+        <input class="login_text" placeholder="请输入设置的教师姓名" bindinput="listenerNameInput" />
+      </view>
+    </view>
+
+    <view class="body2">
+      <view class='left'>请选择类型：</view>
+      <view class='right'>
+        <view class='select_box'>
+          <view class='select' catchtap='selectTap'>
+            <text class='select_text'>{{selectData[index]}}</text>
+            <image class='select_img {{show&&"select_img_rotate"}}' src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/up.jpg'></image>
+          </view>
+          <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+            <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view>
+      <button class='finash' bindtap='finashAction'>完成</button>
+    </view>
+  </view>
+</page>
+
+<modal title="提示" hidden="{{modalHidden}}" no-cancel bindconfirm="modalChange">
+  <view class="newAlert"> {{modelInnerHtml}} </view>
+</modal>
+<!-- <loading hidden="{{loadingHidden}}" bindchange="loadingChange">
+  加载中...
+</loading> -->

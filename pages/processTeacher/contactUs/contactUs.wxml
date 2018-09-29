@@ -1,0 +1,103 @@
+<!--main.wxml-->
+<image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/bg2.png" mode="aspectFill" class="bgImg" style="{{translate}}"></image>
+<!-- 侧滑栏 -->
+
+
+<page bindtouchend='touchend' bindtouchstart='touchstart'>
+        <!-- 侧滑栏 -->
+  <view class="page_tab" style='z-index:{{zindex}}'>
+    <block>
+      <!-- <navigator url='../login/login'> -->
+      <image class='user_head' src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/3.jpg'></image>
+      <!-- <view class='user_name'>未登录</view> -->
+      <!-- </navigator> -->
+    </block>
+    <!-- <block wx:else>
+      <image class='user_head' src='{{user_head}}'></image>
+      <view class='user_name'>{{user_name}}</view>
+    </block> -->
+    <view class="page_tab_content">
+      <navigator url='../homepage/homepage' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/home.jpg'></image>
+          <text>首页</text>
+        </view>
+      </navigator>
+      <navigator url='../myself/myself' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/self.jpg'></image>
+          <text>个人中心</text>
+        </view>
+      </navigator>
+      <navigator url='../unprocess/unprocess' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/submit.jpg'></image>
+          <text>未处理问题</text>
+        </view>
+      </navigator>
+      <navigator url='../toTeacherProblem/toTeacherProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/cha.jpg'></image>
+          <text bindtap='tosat'>被退回问题</text>
+        </view>
+      </navigator>
+      <navigator url='../unconfirmProblem/unconfirmProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/gou.jpg'></image>
+          <text>待确定问题</text>
+        </view>
+      </navigator>
+      <navigator url='../contactUs/contactUs' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/contect.jpg'></image>
+          <text>联系我们</text>
+        </view>
+      </navigator>
+      <navigator url='../../index/index' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/exit.jpg'></image>
+          <text>离开</text>
+        </view>
+      </navigator>
+      <!-- <button wx:if="{{btn_val != '登录'}}" catchtap='register'>{{btn_val}}</button>
+      <button wx:else catchtap='register'>{{btn_val}}</button> -->
+    </view>
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+
+  <!-- 主页 -->
+  <view class="container" style="{{translate}}">
+
+    <view class="about_1">
+      <view class="about_2" style="background-image: url('https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/star.jpg');font-size:50rpx;font-weight: bold;font-style: inherit ">
+        <text decode='true'>星&ensp;&ensp;移&ensp;&ensp;工&ensp;&ensp;作&ensp;&ensp;室</text>
+      </view>
+      <view class="about_12">
+        <text class="about_18">在电脑端浏览器中打开以下网址，可查看其他系统</text>
+        <text class="about_19">https://www.gy1217.club</text>
+        <image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/about_20_20.jpg" style=" width:238rpx;height:186rpx;" mode="aspectFit" border="0" bindtap="about_20_click" class="about_20"></image>
+      </view>
+      <text class="about_13">如果遇到bug，欢迎直接联系我们</text>
+      <view class="about_14">
+        <image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/about_21_21.jpg" style=" width:32rpx;height:30rpx;" mode="aspectFit" border="0" bindtap="about_21_click" class="about_21"></image>
+        <text class="about_22">微信咨询：{{wx_code}}</text>
+        <button bindtap="about_23_click" class="about_23">复制</button>
+      </view>
+      <view class="about_15">
+        <image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/about_24_24.jpg" style=" width:28rpx;height:31rpx;" mode="aspectFit" border="0" bindtap="about_24_click" class="about_24"></image>
+        <text class="about_25">邮箱咨询：{{my_email}}</text>
+        <button bindtap="about_26_click" class="about_26">复制</button>
+      </view>
+      <view class="about_16">
+        <image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/about_27_27.jpg" style=" width:31rpx;height:34rpx;" mode="aspectFit" border="0" bindtap="about_27_click" class="about_27"></image>
+        <text class="about_28">电话咨询：</text>
+        <button bindtap="about_29_click" class="about_29">电话联系</button>
+      </view>
+      <image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/about_17_17.jpg" style=" width:245rpx;height:26rpx;" mode="aspectFit" border="0" bindtap="about_17_click" class="about_17"></image>
+    </view>
+
+  </view>
+</page>
+<!-- <loading hidden="{{loadingHidden}}" bindchange="loadingChange">
+  加载中...
+</loading> -->

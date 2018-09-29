@@ -1,0 +1,466 @@
+/**index.wxss**/
+
+page {
+  height: 100%;
+}
+
+.container {
+  position: absolute;
+  opacity: 0.75;
+  background: -webkit-linear-gradient(top, #303 0%, #ccc 100%);
+  /*background: -o-linear-gradient(top, #330033 0%,#CCCCCC 100%);
+  background: -ms-linear-gradient(top, #330033 0%,#CCCCCC 100%);
+   background: linear-gradient(to bottom, #330033 0%,#99CCFF 100%); */
+  font-family: 微软雅黑 !important;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: All 0.4s ease;
+  -webkit-transition: All 0.4s ease;
+}
+
+.bgImg {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  transition: All 0.4s ease;
+  -webkit-transition: All 0.4s ease;
+}
+
+/* 遮罩层 */
+
+.bg {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.7;
+  opacity: 0.70;
+  transition: width 4s;
+  filter: alpha(opacity=70);
+}
+
+/* 侧滑栏 */
+
+.page_tab {
+  background-color: white;
+  height: 100%;
+  width: 750rpx;
+  position: fixed;
+  z-index: -1;
+}
+
+.page_tab_content .wc {
+  color: #000;
+  position: relative;
+  font-size: 32rpx;
+  padding: 10rpx 0 20rpx 20rpx;
+  /* pointer-events: none; */
+}
+
+.page_tab_content button {
+  width: 280rpx;
+  background: #fb9817;
+  color: #fff;
+  position: relative;
+  right: 120rpx;
+  top: 150rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.page_tab_content image {
+  display: inline-block;
+  height: 40rpx;
+  width: 40rpx;
+  margin-right: 60rpx;
+}
+
+.user_head {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  text-align: center;
+  margin: 40rpx 40rpx 80rpx 150rpx;
+}
+
+/*主页*/
+.about_1 {
+  width: 749rpx;
+  height: 1262rpx;
+  padding: 0rpx;
+  clear: both;
+  float: left;
+  background-color: #ecedec;
+  text-align: left;
+  font-size: 27rpx;
+}
+.about_2{
+   display: flex; 
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center; 
+  color: white; 
+  /* font-size: 2000rpx */
+}
+.about_1 .about_2 {
+  width: 749rpx;
+  height: 262rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 0rpx;
+  margin-left: 0rpx;
+  float: left;
+   background-color: #fff; 
+  text-align: left;
+  font-size: 27rpx;
+}
+
+.about_1 .about_2 .about_3 {
+  width: 127rpx;
+  height: 170rpx;
+  padding: 0rpx;
+  margin-top: 46rpx;
+  margin-left: 20rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+}
+
+.about_1 .about_2 .about_3 .about_6 {
+  width: 90rpx;
+  height: 89rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 9rpx;
+  margin-left: 15rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 89rpx;
+}
+
+.about_1 .about_2 .about_3 .about_7 {
+  width: 124rpx;
+  height: 31rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 26rpx;
+  margin-left: 1rpx;
+  float: left;
+  text-align: center;
+  font-size: 27rpx;
+  line-height: 31rpx;
+}
+
+.about_1 .about_2 .about_4 {
+  width: 135rpx;
+  height: 170rpx;
+  padding: 0rpx;
+  margin-top: 46rpx;
+  margin-left: 159rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+}
+
+.about_1 .about_2 .about_4 .about_8 {
+  width: 90rpx;
+  height: 89rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 4rpx;
+  margin-left: 23rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 89rpx;
+}
+
+.about_1 .about_2 .about_4 .about_10 {
+  width: 124rpx;
+  height: 31rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 31rpx;
+  margin-left: 6rpx;
+  float: left;
+  text-align: center;
+  font-size: 27rpx;
+  line-height: 31rpx;
+}
+
+.about_1 .about_2 .about_5 {
+  width: 140rpx;
+  height: 170rpx;
+  padding: 0rpx;
+  margin-top: 46rpx;
+  margin-left: 152rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+}
+
+.about_1 .about_2 .about_5 .about_9 {
+  width: 90rpx;
+  height: 89rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 4rpx;
+  margin-left: 27rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 89rpx;
+}
+
+.about_1 .about_2 .about_5 .about_11 {
+  width: 124rpx;
+  height: 31rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 31rpx;
+  margin-left: 11rpx;
+  float: left;
+  text-align: center;
+  font-size: 27rpx;
+  line-height: 31rpx;
+}
+
+.about_1 .about_12 {
+  width: 749rpx;
+  height: 513rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 18rpx;
+  margin-left: 0rpx;
+  float: left;
+  background-color: #fff;
+  text-align: left;
+  font-size: 27rpx;
+}
+
+.about_1 .about_12 .about_18 {
+  width: 639rpx;
+  height: 51rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 70rpx;
+  margin-left: 59rpx;
+  float: left;
+  text-align: center;
+  font-size: 27rpx;
+  line-height: 51rpx;
+}
+
+.about_1 .about_12 .about_19 {
+  width: 427rpx;
+  height: 51rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 21rpx;
+  margin-left: 165rpx;
+  float: left;
+  text-align: center;
+  font-size: 27rpx;
+  line-height: 51rpx;
+}
+
+.about_1 .about_12 .about_20 {
+  width: 238rpx;
+  height: 186rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 58rpx;
+  margin-left: 256rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 186rpx;
+}
+
+.about_1 .about_13 {
+  width: 546rpx;
+  height: 38rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 45rpx;
+  margin-left: 27rpx;
+  float: left;
+  text-align: left;
+  color: #808080;
+  font-size: 27rpx;
+  line-height: 38rpx;
+}
+
+.about_1 .about_14 {
+  width: 546rpx;
+  height: 43rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 21rpx;
+  margin-left: 27rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 43rpx;
+}
+
+.about_1 .about_14 .about_21 {
+  width: 32rpx;
+  height: 30rpx;
+  padding: 0rpx;
+  margin-top: 6rpx;
+  margin-left: 0rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 30rpx;
+}
+
+.about_1 .about_14 .about_22 {
+  width: 253rpx;
+  height: 36rpx;
+  padding: 0rpx;
+  margin-top: 3rpx;
+  margin-left: 12rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 36rpx;
+}
+
+.about_1 .about_14 .about_23 {
+  width: 58rpx;
+  height: 36rpx;
+  padding: 0rpx;
+  margin-top: 3rpx;
+  margin-left: 12rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 36rpx;
+}
+
+.about_1 .about_15 {
+  width: 676rpx;
+  height: 49rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 41rpx;
+  margin-left: 27rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 49rpx;
+}
+
+.about_1 .about_15 .about_24 {
+  width: 28rpx;
+  height: 31rpx;
+  padding: 0rpx;
+  margin-top: 7rpx;
+  margin-left: 0rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 31rpx;
+}
+
+.about_1 .about_15 .about_25 {
+  width: 472rpx;
+  height: 38rpx;
+  padding: 0rpx;
+  margin-top: 6rpx;
+  margin-left: 15rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 38rpx;
+}
+
+.about_1 .about_15 .about_26 {
+  width: 61rpx;
+  height: 40rpx;
+  padding: 0rpx;
+  margin-top: 6rpx;
+  margin-left: 8rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 40rpx;
+}
+
+.about_1 .about_16 {
+  width: 676rpx;
+  height: 76rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 20rpx;
+  margin-left: 26rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+}
+
+.about_1 .about_16 .about_27 {
+  width: 31rpx;
+  height: 34rpx;
+  padding: 0rpx;
+  margin-top: 22rpx;
+  margin-left: 1rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 34rpx;
+}
+
+.about_1 .about_16 .about_28 {
+  width: 141rpx;
+  height: 46rpx;
+  padding: 0rpx;
+  margin-top: 18rpx;
+  margin-left: 13rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 46rpx;
+}
+
+.about_1 .about_16 .about_29 {
+  width: 180rpx;
+  height: 63rpx;
+  padding: 0rpx;
+  margin-top: 6rpx;
+  margin-left: 6rpx;
+  float: left;
+  text-align: center;
+  border-color: #222;
+  border-width: 1rpx;
+  border-style: solid;
+  border-radius: 10rpx;
+  font-size: 27rpx;
+  line-height: 63rpx;
+}
+
+.about_1 .about_17 {
+  width: 245rpx;
+  height: 26rpx;
+  font-size: 1rpx;
+  padding: 0rpx;
+  clear: both;
+  margin-top: 86rpx;
+  margin-left: 253rpx;
+  float: left;
+  text-align: left;
+  font-size: 27rpx;
+  line-height: 26rpx;
+}

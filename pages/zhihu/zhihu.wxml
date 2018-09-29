@@ -1,0 +1,126 @@
+<!--main.wxml-->
+<image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/bg2.png" mode="aspectFill" class="bgImg" style="{{translate}}"></image>
+<!-- 侧滑栏 -->
+
+
+<page bindtouchend='touchend' bindtouchstart='touchstart'>
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+
+  <view class="modalDlg" wx:if="{{showModal}}">
+    <view class='text_process'>
+      <view class='text_left'>
+        日常教学问题
+      </view>
+      <view class='text_right'>
+        {{teach_num}}(个)
+      </view>
+    </view>
+    <view class='text_process'>
+      <view class='text_left'>
+        <text decode="{{true}}">设备问题&ensp;&ensp;&ensp;&ensp;</text>
+      </view>
+      <view class='text_right'>
+        {{equipment_num}}(个)
+      </view>
+    </view>
+    <view class='text_process'>
+      <view class='text_left'>
+        <text decode="{{true}}">需求和建议&ensp;&ensp;</text>
+      </view>
+      <view class='text_right'>
+        {{demand_num}}(个)
+      </view>
+    </view>
+    <button bindtap="go" class='text_button'>关闭</button>
+  </view>
+
+
+  <!-- 侧滑栏 -->
+  <view class="page_tab" style='z-index:{{zindex}}'>
+    <block>
+      <image class='user_head' src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/1.jpg'></image>
+    </block>
+    <view class="page_tab_content">
+      <navigator url='../zhihu/zhihu' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/home.jpg'></image>
+          <text>首页</text>
+        </view>
+      </navigator>
+      <navigator url='../myself/myself' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/self.jpg'></image>
+          <text>个人中心</text>
+        </view>
+      </navigator>
+      <navigator url='../submission/submission' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/submit.jpg'></image>
+          <text>提交问题</text>
+        </view>
+      </navigator>
+      <navigator url='../untreatProblem/untreatProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/cha.jpg'></image>
+          <text bindtap='tosat'>未处理问题</text>
+        </view>
+      </navigator>
+      <navigator url='../alreadyProcess/alreadyProcess' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/gou.jpg'></image>
+          <text>已处理问题</text>
+        </view>
+      </navigator>
+      <navigator url='../rejectProblem/rejectProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/reject.jpg'></image>
+          <text bindtap='tosat'>被驳回问题</text>
+        </view>
+      </navigator>
+      <navigator url='../contactUs/contactUs' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/contect.jpg'></image>
+          <text>联系我们</text>
+        </view>
+      </navigator>
+      <navigator url='../index/index' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/exit.jpg'></image>
+          <text>离开</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+
+  <!-- 主页 -->
+  <view class="container" style="{{translate}}">
+    <image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/1.jpg" mode="aspectFit" class="logo"></image>
+    <view class='className'>
+      <view class='left'>
+        班级：
+      </view>
+      <view class='right'>
+        {{className}}
+      </view>
+    </view>
+    <view class='problem'>
+      以下为还未处理的问题处理情况：
+    </view>
+
+    <view class='all_show'>
+      <view class='show1'>未处理问题</view>
+      <view class='show2'>{{unprocess_num}}(个)</view>
+      <view class='show3'>
+        <button bindtap="submit" class='show_button' data-id='1'>查看</button>
+      </view>
+    </view>
+    <view class='all_show'>
+      <view class='show1'>被驳回问题</view>
+      <view class='show2'>{{reject_num}}(个)</view>
+      <view class='show3'>
+        <button bindtap="submit" class='show_button' data-id='2'>查看</button>
+      </view>
+    </view>
+  </view>
+</page>

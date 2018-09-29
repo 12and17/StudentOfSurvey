@@ -1,0 +1,127 @@
+<!--main.wxml-->
+<image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/bg2.png" mode="aspectFill" class="bgImg" style="{{translate}}"></image>
+<!-- 侧滑栏 -->
+
+
+<page bindtouchend='touchend' bindtouchstart='touchstart'>
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+
+  <view class="modalDlg" wx:if="{{showModa2}}">
+    <view class="conts">
+      <textarea class="areas" placeholder="重新简述你的处理过程" maxlength="{{max}}" bindinput="inputs">
+        <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+        <text class="hint">{{texts}}</text>
+      </textarea>
+    </view>
+
+    <view class='text_process'>
+      <view class='text_left'>
+        <button bindtap="determine2" class='text_button1'>确定</button>
+      </view>
+      <view class='text_right'>
+        <button bindtap="go" class='text_button2'>关闭</button>
+      </view>
+    </view>
+  </view>
+    <!-- 侧滑栏 -->
+  <view class="page_tab" style='z-index:{{zindex}}'>
+    <block>
+      <!-- <navigator url='../login/login'> -->
+      <image class='user_head' src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/4.jpg'></image>
+    </block>
+    <view class="page_tab_content">
+      <navigator url='../homepage/homepage' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/home.jpg'></image>
+          <text>首页</text>
+        </view>
+      </navigator>
+      <navigator url='../myself/myself' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/self.jpg'></image>
+          <text>个人中心</text>
+        </view>
+      </navigator>
+      <navigator url='../unagreeProblem/unagreeProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/submit.jpg'></image>
+          <text>未同意问题</text>
+        </view>
+      </navigator>
+      <navigator url='../addAndDelete/addAndDelete' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/addAndDelete.jpg'></image>
+          <text>添加&删除处理教师</text>
+        </view>
+      </navigator>
+      <navigator url='../replaceCharge/replaceCharge' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/replace.jpg'></image>
+          <text>更换管理员</text>
+        </view>
+      </navigator>
+      <navigator url='../contactUs/contactUs' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/contect.jpg'></image>
+          <text>联系我们</text>
+        </view>
+      </navigator>
+      <navigator url='../../index/index' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/exit.jpg'></image>
+          <text>离开</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+
+  <!-- 主页 -->
+  <view class="container" style="{{translate}}">
+
+    <view class="search">
+      <view class="search-bar">
+        <view class="search-wrap">
+          <icon type="search" size="16" class="icon-search" />
+          <input type="text" placeholder="请输入搜索内容" class="search-input" name="searchKeyword" bindinput="bindKeywordInput" value="{{searchKeyword}}" />
+        </view>
+        <view class="search-cancel" bindtap="keywordSearch">搜索</view>
+      </view>
+      <view class="search-result">
+        <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
+          <view wx:for="{{searchSongList}}" wx:key="unique" data-data="{{item}}">
+            <view class='lable'>
+              <view class='sumit_time'>学生提交时间：{{item.sumbitTime}}</view>
+              <view class='type'>类型：{{item.problemType}}</view>
+            </view>
+            <view class='process'>
+              <view class="tr1 bg-g">
+                <view class="td-1" selectable="true">提交班级</view>
+                <text class="th-grade" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.className}}</text>
+                <view class="td-1" selectable="true">处理时间</view>
+                <text class="th-grade" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.processTime}}</text>
+                <view class="td-1" selectable="true">处理教师</view>
+                <text class="th-grade" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.teacherName}}</text>
+              </view>
+              <view class="tr1 bg-g">
+                <view class="td-1" selectable="true">问题描述</view>
+                <text class="td-2" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.problemDescribe}}</text>
+              </view>
+              <view class="tr1 bg-g">
+                <view class="td-1" selectable="true">处理过程</view>
+                <text class="td-2" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.processCourse}}</text>
+              </view>
+            </view>
+            <view class='lable2'>
+              <view>
+                <button class='assign' bindtap="submit" data-id='{{item.problemId}}'>同意</button>
+              </view>
+            </view>
+          </view>
+          <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+          <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</page>

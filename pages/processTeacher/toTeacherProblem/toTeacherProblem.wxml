@@ -1,0 +1,143 @@
+<!--main.wxml-->
+<image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/bg2.png" mode="aspectFill" class="bgImg" style="{{translate}}"></image>
+<!-- 侧滑栏 -->
+
+
+<page bindtouchend='touchend' bindtouchstart='touchstart'>
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+
+  <view class="modalDlg" wx:if="{{showModa2}}">
+    <view class="conts">
+      <textarea class="areas" placeholder="重新简述你的处理过程" maxlength="{{max}}" bindinput="inputs">
+        <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+        <text class="hint">{{texts}}</text>
+      </textarea>
+    </view>
+
+    <view class='text_process'>
+      <view class='text_left'>
+        <button bindtap="determine2" class='text_button1'>确定</button>
+      </view>
+      <view class='text_right'>
+        <button bindtap="go" class='text_button2'>关闭</button>
+      </view>
+    </view>
+  </view>
+      <!-- 侧滑栏 -->
+  <view class="page_tab" style='z-index:{{zindex}}'>
+    <block>
+      <!-- <navigator url='../login/login'> -->
+      <image class='user_head' src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/3.jpg'></image>
+      <!-- <view class='user_name'>未登录</view> -->
+      <!-- </navigator> -->
+    </block>
+    <!-- <block wx:else>
+      <image class='user_head' src='{{user_head}}'></image>
+      <view class='user_name'>{{user_name}}</view>
+    </block> -->
+    <view class="page_tab_content">
+      <navigator url='../homepage/homepage' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/home.jpg'></image>
+          <text>首页</text>
+        </view>
+      </navigator>
+      <navigator url='../myself/myself' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/self.jpg'></image>
+          <text>个人中心</text>
+        </view>
+      </navigator>
+      <navigator url='../unprocess/unprocess' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/submit.jpg'></image>
+          <text>未处理问题</text>
+        </view>
+      </navigator>
+      <navigator url='../toTeacherProblem/toTeacherProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/cha.jpg'></image>
+          <text bindtap='tosat'>被退回问题</text>
+        </view>
+      </navigator>
+      <navigator url='../unconfirmProblem/unconfirmProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/gou.jpg'></image>
+          <text>待确定问题</text>
+        </view>
+      </navigator>
+      <navigator url='../contactUs/contactUs' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/contect.jpg'></image>
+          <text>联系我们</text>
+        </view>
+      </navigator>
+      <navigator url='../../index/index' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/exit.jpg'></image>
+          <text>离开</text>
+        </view>
+      </navigator>
+      <!-- <button wx:if="{{btn_val != '登录'}}" catchtap='register'>{{btn_val}}</button>
+      <button wx:else catchtap='register'>{{btn_val}}</button> -->
+    </view>
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+
+  <!-- 主页 -->
+  <view class="container" style="{{translate}}">
+
+    <view class="search">
+      <view class="search-bar">
+        <view class="search-wrap">
+          <icon type="search" size="16" class="icon-search" />
+          <input type="text" placeholder="请输入搜索内容" class="search-input" name="searchKeyword" bindinput="bindKeywordInput" value="{{searchKeyword}}" />
+        </view>
+        <view class="search-cancel" bindtap="keywordSearch">搜索</view>
+      </view>
+      <view class="search-result">
+        <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
+          <view wx:for="{{searchSongList}}" wx:key="unique" data-data="{{item}}">
+            <view class='lable'>
+              <view class='sumit_time'>提交时间：{{item.sumbitTime}}</view>
+            </view>
+            <!-- <view>提交时间：</view>  -->
+            <view class='process'>
+              <view class="tr1 bg-g">
+                <view class="td-1" selectable="true">提交班级</view>
+                <text class="th-grade" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.problemType}}</text>
+                <!--view class="td">{{item.type}}</view-->
+                <view class="td-1" selectable="true">驳回时间</view>
+                <text class="th-grade" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.toTeacherTime}}</text>
+                <!--view class="td">{{item.type}}</view-->
+                <view class="td-1" selectable="true">类型</view>
+                <text class="th-grade" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.problemTeacher}}</text>
+                <!--view class="td">{{item.type}}</view-->
+              </view>
+              <view class="tr1 bg-g">
+                <view class="td-1" selectable="true">问题描述</view>
+                <text class="td-3" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.problemDescribe}}</text>
+                <!--view class="td">{{item.type}}</view-->
+              </view>
+              <view class="tr1 bg-g">
+                <view class="td-1" selectable="true">驳回理由</view>
+                <text class="td-3" style="overflow-y:auto;overflow-x:scroll" selectable="true">{{item.toTeacherReason}}</text>
+                <!--view class="td">{{item.type}}</view-->
+              </view>
+            </view>
+            <view class='lable2'>
+              <view>
+                <button class='assign' bindtap="submit" data-id='{{item.problemId}}'>重新处理</button>
+              </view>
+            </view>
+          </view>
+          <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+          <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</page>
+<!-- <loading hidden="{{loadingHidden}}" bindchange="loadingChange">
+  加载中...
+</loading> -->

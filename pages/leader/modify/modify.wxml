@@ -1,0 +1,95 @@
+<!--main.wxml-->
+<image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/bg2.png" mode="aspectFill" class="bgImg" style="{{translate}}"></image>
+<!-- 侧滑栏 -->
+
+
+<page bindtouchend='touchend' bindtouchstart='touchstart'>
+      <!-- 侧滑栏 -->
+  <view class="page_tab" style='z-index:{{zindex}}'>
+    <block>
+      <image class='user_head' src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/4.jpg'></image>
+    </block>
+    <view class="page_tab_content">
+      <navigator url='../homepage/homepage' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/home.jpg'></image>
+          <text>首页</text>
+        </view>
+      </navigator>
+      <navigator url='../myself/myself' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/self.jpg'></image>
+          <text>个人中心</text>
+        </view>
+      </navigator>
+      <navigator url='../unagreeProblem/unagreeProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/submit.jpg'></image>
+          <text>未同意问题</text>
+        </view>
+      </navigator>
+      <navigator url='../addAndDelete/addAndDelete' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/addAndDelete.jpg'></image>
+          <text>添加&删除处理教师</text>
+        </view>
+      </navigator>
+      <navigator url='../replaceCharge/replaceCharge' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/replace.jpg'></image>
+          <text>更换管理员</text>
+        </view>
+      </navigator>
+      <navigator url='../contactUs/contactUs' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/contect.jpg'></image>
+          <text>联系我们</text>
+        </view>
+      </navigator>
+      <navigator url='../../index/index' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/exit.jpg'></image>
+          <text>离开</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+
+  <!-- 主页 -->
+  <view class="container" style="{{translate}}">
+    <view class="body">
+
+      <form>
+
+        <view>
+          <view class='modify_ago'>
+            <text class='text'>原密码：</text>
+            <input type='password' class='modify_text' placeholder='请输入原密码' bindinput='listenerAgo'></input>
+          </view>
+        </view>
+        <view>
+          <view class='modify_ago'>
+            <text class='text'>新密码：</text>
+            <input type='password' class='modify_text' placeholder='请输入新密码' bindinput='listenerPasswordInput1'></input>
+          </view>
+        </view>
+        <view>
+          <view class='modify_ago1'>
+            <text class='text'>确认密码：</text>
+            <input type='password' class='modify_text' placeholder='再次输入新密码' bindinput='listenerPasswordInput2'></input>
+          </view>
+        </view>
+        <view class="allbutton">
+          <button form-type="reset" class="modify_button">重置</button>
+          <button class="modify_button" bindtap='loginAction'>确定</button>
+        </view>
+
+      </form>
+    </view>
+  </view>
+</page>
+
+<modal title="提示" hidden="{{modalHidden}}" no-cancel bindconfirm="modalChange">
+  <view class="newAlert"> {{modelInnerHtml}} </view>
+</modal>

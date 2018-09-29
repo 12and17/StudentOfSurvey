@@ -1,0 +1,14 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 70rpx 0 0 0;
+  box-sizing: border-box;
+}
+@font-face {
+    font-family: 'track';
+    src: url('../fonts/Track.ttf');
+}

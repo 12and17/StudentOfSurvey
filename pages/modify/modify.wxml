@@ -1,0 +1,113 @@
+<!--main.wxml-->
+<image src="https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/bg2.png" mode="aspectFill" class="bgImg" style="{{translate}}"></image>
+<!-- 侧滑栏 -->
+
+
+<page bindtouchend='touchend' bindtouchstart='touchstart'>
+  <!-- 侧滑栏 -->
+  <view class="page_tab" style='z-index:{{zindex}}'>
+    <block>
+      <!-- <navigator url='../login/login'> -->
+      <image class='user_head' src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/1.jpg'></image>
+      <!-- <view class='user_name'>未登录</view> -->
+      <!-- </navigator> -->
+    </block>
+    <!-- <block wx:else>
+      <image class='user_head' src='{{user_head}}'></image>
+      <view class='user_name'>{{user_name}}</view>
+    </block> -->
+    <view class="page_tab_content">
+      <navigator url='../zhihu/zhihu' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/home.jpg'></image>
+          <text>首页</text>
+        </view>
+      </navigator>
+      <navigator url='../myself/myself' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/self.jpg'></image>
+          <text>个人中心</text>
+        </view>
+      </navigator>
+      <navigator url='../submission/submission' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/submit.jpg'></image>
+          <text>提交问题</text>
+        </view>
+      </navigator>
+      <navigator url='../untreatProblem/untreatProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/cha.jpg'></image>
+          <text bindtap='tosat'>未处理问题</text>
+        </view>
+      </navigator>
+      <navigator url='../alreadyProcess/alreadyProcess' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/gou.jpg'></image>
+          <text>已处理问题</text>
+        </view>
+      </navigator>
+      <navigator url='../rejectProblem/rejectProblem' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/reject.jpg'></image>
+          <text bindtap='tosat'>被驳回问题</text>
+        </view>
+      </navigator>
+      <navigator url='../contactUs/contactUs' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/contect.jpg'></image>
+          <text>联系我们</text>
+        </view>
+      </navigator>
+      <navigator url='../index/index' open-type='redirect'>
+        <view class="wc">
+          <image src='https://lg-52bo0bvm-1253678560.cos.ap-shanghai.myqcloud.com/exit.jpg'></image>
+          <text>离开</text>
+        </view>
+      </navigator>
+      <!-- <button wx:if="{{btn_val != '登录'}}" catchtap='register'>{{btn_val}}</button>
+      <button wx:else catchtap='register'>{{btn_val}}</button> -->
+    </view>
+  </view>
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+
+  <!-- 主页 -->
+  <view class="container" style="{{translate}}">
+    <view class="body">
+
+      <form>
+
+        <view>
+          <view class='modify_ago'>
+            <text class='text'>原密码：</text>
+            <input type='password' class='modify_text' placeholder='请输入原密码' bindinput='listenerAgo'></input>
+          </view>
+        </view>
+        <view>
+          <view class='modify_ago'>
+            <text class='text'>新密码：</text>
+            <input type='password' class='modify_text' placeholder='请输入新密码' bindinput='listenerPasswordInput1'></input>
+          </view>
+        </view>
+        <view>
+          <view class='modify_ago1'>
+            <text class='text'>确认密码：</text>
+            <input type='password' class='modify_text' placeholder='再次输入新密码' bindinput='listenerPasswordInput2'></input>
+          </view>
+        </view>
+        <view class="allbutton">
+          <button form-type="reset" class="modify_button">重置</button>
+          <button class="modify_button" bindtap='loginAction'>确定</button>
+        </view>
+
+      </form>
+    </view>
+  </view>
+</page>
+
+<modal title="提示" hidden="{{modalHidden}}" no-cancel bindconfirm="modalChange">
+  <view class="newAlert"> {{modelInnerHtml}} </view>
+</modal>
+<!-- <loading hidden="{{loadingHidden}}" bindchange="loadingChange">
+  加载中...
+</loading> -->

@@ -1,0 +1,268 @@
+/**index.wxss**/
+
+page {
+  height: 100%;
+}
+
+.container {
+  position: absolute;
+  opacity: 0.75;
+  background: -webkit-linear-gradient(top, #303 0%, #ccc 100%);
+  font-family: 微软雅黑 !important;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: All 0.4s ease;
+  -webkit-transition: All 0.4s ease;
+}
+
+.bgImg {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  transition: All 0.4s ease;
+  -webkit-transition: All 0.4s ease;
+}
+
+/* 错误栏 */
+
+.ad_popError {
+  background: #de352d;
+  color: #fff;
+  height: 58rpx;
+  line-height: 58rpx;
+  font-size: 24rpx;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+/* 弹出框 */
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.7;
+}
+
+.modalDlg {
+  width: 580rpx;
+  height: 560rpx;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  margin: -370rpx 85rpx;
+  background-color: #fff;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.text_process {
+  margin-top: 20rpx;
+  /* margin-left: 20rpx; */
+  display: flex;
+  font-size: 30rpx;
+  border-bottom: black;
+  border-bottom-width: 2rpx;
+}
+
+.text_left {
+  float: left;
+  margin-left: 50rpx;
+}
+
+.text_right {
+  float: right;
+  margin-left: 100rpx;
+  color: red;
+}
+
+.text_button1 {
+  margin-top: 50rpx;
+  background-color: greenyellow;
+}
+
+.text_button2 {
+  margin-top: 50rpx;
+  background-color: greenyellow;
+}
+
+.tip2 {
+  width: 100%;
+  padding-top: 60rpx;
+  font-size: 40rpx;
+}
+
+/* 邮箱主体 */
+
+.body {
+  padding-top: 30%;
+  /* padding-left: 10%; */
+  display: flex;
+  /* float: left */
+  flex-direction: row;
+  position: fixed;
+  left: 10%;
+}
+
+.body1 {
+  padding-top: 10%;
+  /* padding-left: 10%; */
+  flex-direction: row;
+  /* float: left */
+  position: fixed;
+  left: 9%;
+}
+
+.body2 {
+  padding-top: 20%;
+  /* padding-left: 10%; */
+  flex-direction: row;
+  /* float: left */
+  position: fixed;
+  left: 9%;
+}
+
+.body3 {
+  padding-top: 26%;
+  /* padding-left: 10%; */
+  display: flex;
+  /* float: left */
+  flex-direction: row;
+  /* position: fixed;
+  left: 10%; */
+}
+
+.body4 {
+  padding-top: 6%;
+  /* padding-left: 10%; */
+  display: flex;
+  /* float: left */
+  flex-direction: row;
+  /* position: fixed;
+  left: 10%; */
+}
+
+.body5 {
+  padding-top: 6%;
+  /* padding-left: 10%; */
+  display: flex;
+  /* float: left */
+  flex-direction: row;
+  /* position: fixed; */
+  /* left: 12%; */
+}
+
+.body6 {
+  padding-top: 75%;
+  /* padding-left: 10%; */
+  display: flex;
+  /* float: left */
+  flex-direction: row;
+  position: fixed;
+  left: 9%;
+}
+
+.left {
+  float: left;
+  font-size: 30rpx;
+  margin-top: 8rpx;
+}
+
+.right {
+  float: right;
+}
+
+.login_text {
+  height: 45rpx;
+  line-height: 45rpx;
+  width: 300rpx;
+  font-size: 30rpx;
+  color: white;
+  border: 1rpx solid rgb(241, 242, 243);
+  padding: 0 6px;
+  /* width: calc(100% - 30rpx); */
+  border-radius: 4rpx;
+}
+
+.finash {
+  width: 250rpx;
+  margin-top: 400rpx;
+  background-color: green;
+}
+
+/* 遮罩层 */
+
+.bg {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.7;
+  opacity: 0.70;
+  transition: width 4s;
+  filter: alpha(opacity=70);
+}
+
+/* 侧滑栏 */
+
+.page_tab {
+  background-color: white;
+  height: 100%;
+  width: 750rpx;
+  position: fixed;
+  z-index: -1;
+}
+
+.page_tab_content .wc {
+  color: #000;
+  position: relative;
+  font-size: 32rpx;
+  padding: 10rpx 0 20rpx 20rpx;
+  /* pointer-events: none; */
+}
+
+.page_tab_content button {
+  width: 280rpx;
+  background: #fb9817;
+  color: #fff;
+  position: relative;
+  right: 120rpx;
+  top: 150rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.page_tab_content image {
+  display: inline-block;
+  height: 40rpx;
+  width: 40rpx;
+  margin-right: 60rpx;
+}
+
+.user_head {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  text-align: center;
+  margin: 40rpx 40rpx 80rpx 150rpx;
+}
